@@ -38,7 +38,7 @@ def _send_message(agent, message: str, thread_id: str) -> None:
 
 
 def main() -> int:
-    model = ChatOpenAI(model=os.getenv("MODEL", "gpt-6-luna"))
+    model = ChatOpenAI(model=os.getenv("MODEL", "gpt-6-luna"), use_responses_api=True)
     agent = build_support_agent(model)
     thread_id = uuid4().hex
 
